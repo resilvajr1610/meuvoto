@@ -16,6 +16,7 @@ class _PresidentScreenState extends State<PresidentScreen> {
   FirebaseFirestore db = FirebaseFirestore.instance;
   bool visibleCandidate=true;
   bool visibleOk=false;
+  final Uri _url = Uri.parse('https://meuvotoblog.wordpress.com');
 
   _data()async{
 
@@ -74,6 +75,11 @@ class _PresidentScreenState extends State<PresidentScreen> {
     print("total votos $candidate : $_total");
   }
 
+  void _launchUrl() async {
+    if (!await launchUrl(_url)) throw 'Could not launch $_url';
+    Navigator.pushReplacementNamed(context, "/");
+  }
+
   @override
   void initState() {
     super.initState();
@@ -103,14 +109,14 @@ class _PresidentScreenState extends State<PresidentScreen> {
                         children: [
                           Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 8.0,vertical: 20),
-                            child: Text('Voto confirmado',style: TextStyle(color: Colors.green,fontSize: 20)),
+                            child: Text('Obrigado!',style: TextStyle(color: Colors.green,fontSize: 20)),
                           ),
                           Icon(Icons.check_circle,color: Colors.green),
                         ],
                       ),
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(primary: Colors.green),
-                          onPressed: ()=> Navigator.pushReplacementNamed(context, '/score'),
+                          onPressed: ()=> _launchUrl(),
                           child: Text('ok'))
                     ],
                   ),
