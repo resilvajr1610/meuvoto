@@ -7,4 +7,8 @@ export '../widgets/textButtonCustom.dart';
 export '../widgets/president_widget.dart';
 
 export '../utils/RouteGenerator.dart';
-export '../utils/text_fixed.dart';
+
+export 'package:meuvoto/models/wishes_model.dart';
+
+export 'package:firebase_core/firebase_core.dart';
+export 'package:cloud_firestore/cloud_firestore.dart';

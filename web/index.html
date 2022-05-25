@@ -100,5 +100,36 @@
       loadMainDartJs();
     }
   </script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-storage.js"></script>
+
+  <script>
+
+  var firebaseConfig = {
+    apiKey: "AIzaSyDGvdcWOHFoskqjQzXMQtSQjk_eik4XyGg",
+    authDomain: "meuvoto-e5c3c.firebaseapp.com",
+    projectId: "meuvoto-e5c3c",
+    storageBucket: "meuvoto-e5c3c.appspot.com",
+    messagingSenderId: "325682734735",
+    appId: "1:325682734735:web:7afa6c06a4bacd20aeb2fa",
+    measurementId: "G-F3Y82QY5LD"
+};
+
+  firebase.initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  </script>
+
+  <script type="text/javascript">
+    let useHtml = true;
+    if(useHtml) {
+      window.flutterWebRenderer = "html";
+    } else {
+      window.flutterWebRenderer = "canvaskit";
+    }
+  </script>
+
 </body>
 </html>
